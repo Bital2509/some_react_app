@@ -1,0 +1,56 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #242424;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+.App {
+  color: white;
+  font-family: "Times New Roman";
+}
+.App header {
+  background: #383838;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+}
+.App header span {
+  font-size: 1.2rem;
+}
+.App form {
+  padding: 24px;
+  background: #383838;
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+}
+.App form .title {
+  font-size: 1rem;
+  font-weight: 500;
+}
+.App form input {
+  background: #d6d6d9;
+  padding: 12px 6px;
+  border-radius: 15px;
+  border: 1px black solid;
+  outline: none;
+  color: black;
+}
+.App form button {
+  padding: 12px 6px;
+  border-radius: 15px;
+  border: 1px black solid;
+  background: #d6d6d9;
+  outline: none;
+  color: black;
+}
+
+/*# sourceMappingURL=index.css.map */
