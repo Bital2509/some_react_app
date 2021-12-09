@@ -1,12 +1,21 @@
-import {useState} from "react";
+import {useState, useEffect } from "react";
 
 function ToDoForm({addTask}) {
-    const [userInput, setUserInput] = useState('');
+    const [userInput, setUserInput] = useState(() => {
+        const saved = localStorage.getItem("userInput");
+        const initialValue = JSON.parse(saved);
+        return initialValue || "";
+    });
 
     const handleChange = (e) => {
         setUserInput(e.currentTarget.value)
     }
-    
+
+    useEffect(() => {
+        // storing input name
+        localStorage.setItem("userInput", JSON.stringify(userInput));
+    }, [userInput]);
+
     const handleSubmit = (e) => {
         e.preventDefault()
         addTask(userInput)
