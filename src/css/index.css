@@ -1,3 +1,8 @@
+* {
+  box-sizing: border-box;
+  font-family: "Times New Roman";
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
@@ -12,7 +17,6 @@ code {
 
 .App {
   color: white;
-  font-family: "Times New Roman";
 }
 .App header {
   background: #383838;
@@ -51,6 +55,41 @@ code {
   background: #d6d6d9;
   outline: none;
   color: black;
+}
+.App .list-todo {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  background: #383838;
+  border-radius: 15px;
+}
+.App .list-todo .item-todo {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  background: #d6d6d9;
+  color: black;
+}
+.App .list-todo .item-todo:first-child {
+  margin-top: 0;
+}
+.App .list-todo .item-todo .item-text {
+  font-size: 1.2rem;
+  cursor: pointer;
+  will-change: auto;
+  transition: 0.3s ease;
+}
+.App .list-todo .item-todo .strike {
+  text-decoration: line-through;
+  background: #4dbb5f;
+  will-change: auto;
+  transition: 0.3s ease;
+}
+.App .list-todo .item-todo .item-delete {
+  margin-left: 24px;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=index.css.map */

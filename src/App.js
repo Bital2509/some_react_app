@@ -8,20 +8,24 @@ function App() {
     const addTask = (userInput) => {
         if (userInput) {
             const newItem = {
-                id: Math.random().toString(36).substr(2,9),
+                id: Math.random().toString(36).substr(2, 9),
                 task: userInput,
                 complete: false
             }
-            setTodos([...todos,newItem])
+            setTodos([...todos, newItem])
         }
     }
 
-    const removeTask = () => {
-
+    const removeTask = (id) => {
+        setTodos([...todos.filter((todo) => todo.id !== id)])
     }
 
-    const handleToggle = () => {
-
+    const handleToggle = (id) => {
+        setTodos([
+            ...todos.map((todo) =>
+                todo.id === id ? {...todo, complete: !todo.complete} : {...todo}
+            )
+        ])
     }
 
     return (
@@ -35,19 +39,23 @@ function App() {
                         <div className="wt-col-6 wt-col-sm-12">
                             <ToDoForm addTask={addTask}/>
                         </div>
+                        <div className="wt-col-6 wt-col-sm-12">
+                            <div className="list-todo wt-offset-top-24">
+                                {todos.map((todo) => {
+                                    return (
+                                        <ToDo
+                                            todo={todo}
+                                            key={todo.id}
+                                            toggleTask={handleToggle}
+                                            removeTask={removeTask}
+                                        />
+                                    )
+                                })}
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            {todos.map((todo) => {
-                return (
-                    <ToDo
-                        todo={todo}
-                        key={todos.id}
-                        toggleTask={handleToggle}
-                        removeTask={removeTask}
-                    />
-                )
-            })}
         </div>
     );
 }

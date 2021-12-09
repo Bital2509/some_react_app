@@ -1,3 +1,7 @@
+*{
+  box-sizing: border-box;
+  font-family: "Times New Roman";
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -15,7 +19,6 @@ code {
 
 .App {
   color: white;
-  font-family: "Times New Roman";
 
   header {
     background: #383838;
@@ -37,7 +40,7 @@ code {
     flex-direction: column;
     border-radius: 15px;
 
-    .title{
+    .title {
       font-size: 1rem;
       font-weight: 500;
     }
@@ -62,5 +65,46 @@ code {
   }
 
   .formToDo {
+  }
+
+  .list-todo {
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    background: #383838;
+    border-radius: 15px;
+
+    .item-todo {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px;
+      background: #d6d6d9;
+      color: black;
+
+      &:first-child {
+        margin-top: 0;
+      }
+
+      .item-text {
+        font-size: 1.2rem;
+        cursor: pointer;
+        will-change: auto;
+        transition: 0.3s ease;
+      }
+
+      .strike {
+        text-decoration: line-through;
+        background: #4dbb5f;
+        will-change: auto;
+        transition: 0.3s ease;
+      }
+
+      .item-delete {
+        margin-left: 24px;
+        cursor: pointer;
+      }
+    }
   }
 }
